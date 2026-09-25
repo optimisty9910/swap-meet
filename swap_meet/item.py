@@ -20,7 +20,7 @@ class Item:
 
     def __str__(self):
         result = (
-            f"An object of type Item with id {self.id}."
+            f"An object of type {self.get_category()} with id {self.id}."
         )
         return result
     

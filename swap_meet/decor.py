@@ -7,9 +7,7 @@ class Decor(Item):
         self.length = length
 
     def __str__(self):
-        result = (
-            f"An object of type Decor with id {self.id}. "
-            f"It takes up a {self.width} by {self.length} sized space."
-        )
-        return result
+        item_description = super().__str__()
+        decor_description = f"It takes up a {self.width} by {self.length} sized space."
+        return " ".join((item_description, decor_description))
     

@@ -41,7 +41,14 @@ class Vendor:
         my_item = self.inventory[0]
         their_item = other_vendor.inventory[0]
 
-        return self.swap_items(other_vendor, my_item, their_item)
+        # since the order of items in the inventory doesn't matter. 
+        # we can swap the first item directly to have a O(1) 
+        # time complexity
+        self.inventory[0] = their_item
+        other_vendor.inventory[0] = my_item
+        return True
+
+        # return self.swap_items(other_vendor, my_item, their_item)
 
     def get_by_category(self, category):
         category_objects = []

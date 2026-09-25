@@ -6,9 +6,7 @@ class Electronics(Item):
         self.type = type
 
     def __str__(self):
-        result = (
-            f"An object of type Electronics with id {self.id}. "
-            f"This is a {self.type} device."
-        )
-        return result
+        item_description = super().__str__()
+        electronics_description = f"This is a {self.type} device."
+        return " ".join((item_description, electronics_description))
     

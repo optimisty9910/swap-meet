@@ -6,9 +6,7 @@ class Clothing(Item):
         self.fabric = fabric
 
     def __str__(self):
-        result = (
-            f"An object of type Clothing with id {self.id}. "
-            f"It is made from {self.fabric} fabric."
-        )
-        return result
+        item_description = super().__str__()
+        clothing_description = f"It is made from {self.fabric} fabric."
+        return " ".join((item_description, clothing_description))
     
